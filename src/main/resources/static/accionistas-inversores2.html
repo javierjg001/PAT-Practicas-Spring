@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"> <!--codificación de caracteres-->
+    <title>Información útil para accionistas e inversores - Ferrovial</title>
+    <link rel="shortcut icon" href="https://www.ferrovial.com/wp-content/themes/global/front/dist/static/favicon/favicon.ico">
+    <meta name = "Description" content ="La compañía. Operamos en 12 países con una media de 113,182 empleados.">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"> <!-- css para la tabla -->
+    <link rel="stylesheet" href="./libs/css/styles.css"/> <!--vinculamos css de bootstrap-->
+  </head>
+
+  <body>
+
+    <!----------------------------------------------- NAVBAR ----------------------------------------------->
+    <nav class="navbar navbar-expand-xxl bg-light navbar-light sticky-top">
+      <div class="container">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+          <!--<a href="index.html" width="8%" height="4%">-->
+            <img class="bi me-2 navbar-brand" width="18%" height="4%" role="img" aria-label="Bootstrap" src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Ferrovial_Logo.svg">
+
+          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#toggleMobileMenu" aria-controls="toggleMobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="navbar-collapse collapse" id="toggleMobileMenu">
+            <ul class="nav col-12 col-md-9 mb-2 justify-content-center mb-md-0">
+              <li><a href="index.html" class="nav-link px-2 link-secondary">Inicio &nbsp;|</a></li>
+              <li><a href="sobre-nosotros.html" class="nav-link px-2 link-dark">Sobre Nosotros &nbsp;|</a></li>
+              <li><a href="accionistas-inversores1.html" class="nav-link px-2 link-dark">Accionistas e inversores &nbsp;</a></li>
+              <!--<li><a href="#" class="nav-link px-2 link-dark">Innovación &nbsp;|</a></li>
+              <li><a href="#" class="nav-link px-2 link-dark">Prensa</a></li>-->
+              <!--<li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>-->
+            </ul>
+      
+            <div class="nav col-12 col-md-3 text-end">
+              <button type="button" class="btn btn-outline-primary me-2" onclick="alert('¡Debe registrarse primero!')">Iniciar sesión</button>
+              <a href="registro.html"><button type="button" class="btn btn-outline-primary">Registrarse</button></a>
+              
+            </div>
+          </div>
+        </header>
+      </div>
+    </nav>
+    
+    <!----------------------------------------------- CARD ACCIONISTAS ----------------------------------------------->
+    <div class="card bg-dark text-white">
+      <video autoplay muted loop id="myVideo" width="100%" height="100%">
+        <source src="Imagenes/accionistas.mp4" type="video/mp4">
+      </video>
+      <div class="card-img-overlay">
+        <h1 class="card-title display-5">Relación con accionistas e inversores</h1>
+      </div>
+    </div>
+
+    <div class="container marketing">
+      <br>
+      
+      <!----------------------------------------------- TABLA DE ACCIONES ----------------------------------------------->
+      <h1 class="display-5">Cotización en euros (última semana)</h1>
+      <br>
+      <table id="dataTabla" class="table display">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Último</th>
+            <th>Apertura</th>
+            <th>Máximo</th>
+            <th>Mínimo</th>
+            <th>Volumen</th>
+            <th>% var.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>08.02.2022</td>
+            <td style="color: greenyellow;">24,120</td>
+            <td>23,500</td>
+            <td>24,120</td>
+            <td>23,470</td>
+            <td>1,50M</td>
+            <td style="color: greenyellow;">2,20%</td>
+          </tr>
+          <tr>
+            <td>07.02.2022</td>
+            <td style="color: red;">23,600</td>
+            <td>24,230</td>
+            <td>24,390</td>
+            <td>23,600</td>
+            <td>1,90M</td>
+            <td style="color: red;">-2,12%</td>
+          </tr>
+          <tr>
+            <td>04.02.2022</td>
+            <td style="color:red;">24,110</td>
+            <td>25,060</td>
+            <td>25,140</td>
+            <td>24,010</td>
+            <td>975,55K</td>
+            <td style="color: red;">-2,63%</td>
+          </tr>
+        </tbody>
+
+        <!-- <tfoot>
+          <tr>
+            <th>Fecha</th>
+            <th>Último</th>
+            <th>Apertura</th>
+            <th>Máximo</th>
+            <th>Mínimo</th>
+            <th>Volumen</th>
+          </tr>
+      </tfoot> -->
+      </table>
+
+      <!-- <nav>
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="accionistas-inversores1.html">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="accionistas-inversores1.html">1</a></li>
+          <li class="page-item active" aria-current="page">
+            <a class="page-link active" href="accionistas-inversores2.html">2</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="accionistas-inversores1.html">Next</a>
+          </li>
+        </ul>
+      </nav> -->
+
+
+      <a href="https://www.ferrovial.com/es/accionistas-e-inversores/informacion-financiera/informacion-financiera-trimestral/" class="nav-link px-2 link-dark"><div class="card bg-dark text-white">
+        <img src="Imagenes/inforFinanciera.jpg" class="card-img" alt="ImagenInformacion">
+        <div class="card-img-overlay">
+          <h1 class="card-title display-1">Información Financiera Trimestral</h1>
+          <p class="card-text">Accede aquí para conocer los resultados financieros</p>
+        </div>
+      </div></a>
+      
+
+      <hr class="featurette-divider">
+
+    </div>  
+
+
+    <div class="container">
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center pb-3 mb-3">
+          <li class="nav-item"><a href="index.html" class="nav-link px-2 text-muted">Inicio</a></li>
+          <li class="nav-item"><a href="sobre-nosotros.html" class="nav-link px-2 text-muted">Sobre Nosotros</a></li>
+          <li class="nav-item"><a href="accionistas-inversores1.html" class="nav-link px-2 text-muted">Accionistas e inversores</a></li>
+          <!--<li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Innovación</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Prensa</a></li>-->
+        </ul>
+
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="ms-3"><a class="text-muted" href="https://twitter.com/ferrovial_es"><img class="bi" src="Imagenes/twitter.png" width="50" height="50"></use></img></a></li>
+          <li class="ms-3"><a class="text-muted" href="https://www.linkedin.com/company/ferrovial/"><img class="bi" src="Imagenes/linkedin.png" width="45" height="45"></use></img></a></li>
+          <li class="ms-3"><a class="text-muted" href="https://www.facebook.com/ferrovial"><img class="bi" src="Imagenes/facebook.png" width="50" height="50"></img></a></li>
+        </ul>
+        
+        <p class="text-center text-muted">© Copyright 2022, Ferrovial</p>
+      </footer>
+    </div> 
+    
+        
+  </body>
+
+  <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+    </script>
+
+    <!-- <script src="/libs/js/jquery.js"></script> -->
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script> <!--vinculamos js dataTables-->
+    <script src="./libs/js/datatables.js"></script>
+    <script src="./libs/js/bootstrap.js"></script> <!--vinculamos js-->
+</html>
