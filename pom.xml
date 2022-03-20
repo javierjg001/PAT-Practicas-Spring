@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.javierjg001</groupId>
-	<artifactId>PDS-PRACTICA</artifactId>
+	<artifactId>PAT-PRACTICA</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>PDS-PRACTICA</name>
-	<description>Prácticas de PDS</description>
+	<name>PAT-PRACTICA</name>
+	<description>Prácticas de PAT</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
