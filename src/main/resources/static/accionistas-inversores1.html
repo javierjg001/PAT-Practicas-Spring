@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"> <!--codificación de caracteres-->
+    <title>Información útil para accionistas e inversores - Ferrovial</title>
+    <link rel="shortcut icon" href="https://www.ferrovial.com/wp-content/themes/global/front/dist/static/favicon/favicon.ico">
+    <meta name = "Description" content ="La compañía. Operamos en 12 países con una media de 113,182 empleados.">
+    
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"> <!-- css para la tabla -->
+
+    <link rel="stylesheet" href="./libs/css/styles.css"/> <!--vinculamos css de bootstrap-->
+  </head>
+
+  <body>
+
+    <!----------------------------------------------- NAVBAR ----------------------------------------------->
+    <nav class="navbar navbar-expand-xxl bg-light navbar-light sticky-top">
+      <div class="container">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+          <!--<a href="index.html" width="8%" height="4%">-->
+            <img class="bi me-2 navbar-brand" width="18%" height="4%" role="img" aria-label="Bootstrap" src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Ferrovial_Logo.svg">
+
+          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#toggleMobileMenu" aria-controls="toggleMobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="navbar-collapse collapse" id="toggleMobileMenu">
+            <ul class="nav col-12 col-md-9 mb-2 justify-content-center mb-md-0">
+              <li><a href="index.html" class="nav-link px-2 link-secondary">Inicio &nbsp;|</a></li>
+              <li><a href="sobre-nosotros.html" class="nav-link px-2 link-dark">Sobre Nosotros &nbsp;|</a></li>
+              <li><a href="accionistas-inversores1.html" class="nav-link px-2 link-dark">Accionistas e inversores &nbsp;</a></li>
+              <!--<li><a href="#" class="nav-link px-2 link-dark">Innovación &nbsp;|</a></li>
+              <li><a href="#" class="nav-link px-2 link-dark">Prensa</a></li>-->
+              <!--<li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>-->
+            </ul>
+      
+            <div class="nav col-12 col-md-3 text-end">
+              <button type="button" class="btn btn-outline-primary me-2" onclick="alert('¡Debe registrarse primero!')">Iniciar sesión</button>
+              <a href="registro.html"><button type="button" class="btn btn-outline-primary">Registrarse</button></a>
+              
+            </div>
+          </div>
+        </header>
+      </div>
+    </nav>
+
+    <!----------------------------------------------- CARD ACCIONISTAS ----------------------------------------------->
+    <div class="card bg-dark text-white">
+      <video autoplay muted loop id="myVideo" width="100%" height="100%">
+        <source src="Imagenes/accionistas.mp4" type="video/mp4">
+      </video>
+      <div class="card-img-overlay">
+        <h1 class="card-title display-5">Relación con accionistas e inversores</h1>
+      </div>
+    </div>
+
+    <div class="container marketing">
+      <br>
+      
+      <!----------------------------------------------- TABLA DE ACCIONES ----------------------------------------------->
+      <h1 class="display-5">Cotización en euros (últimos 100 días)</h1>
+      <br>
+      <table id="dataTabla" class="table display">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Último</th>
+            <th>Apertura</th>
+            <th>Máximo</th>
+            <th>Mínimo</th>
+            <th>Volumen [miles]</th>
+          </tr>
+        </thead>
+
+        <tbody id="tablaRellenar">
+
+
+          <!-- <tr>
+            <td>08.02.2022</td>
+            <td style="color: greenyellow;">24,120</td>
+            <td>23,500</td>
+            <td>24,120</td>
+            <td>23,470</td>
+            <td>1,50M</td>
+          </tr>
+          <tr>
+            <td>07.02.2022</td>
+            <td style="color: red;">23,600</td>
+            <td>24,230</td>
+            <td>24,390</td>
+            <td>23,600</td>
+            <td>1,90M</td>
+          </tr>
+          <tr>
+            <td>04.02.2022</td>
+            <td style="color:red;">24,110</td>
+            <td>25,060</td>
+            <td>25,140</td>
+            <td>24,010</td>
+            <td>975,55K</td>
+          </tr> -->
+
+          <tr id="tr0"></tr>
+          <tr id="tr1"></tr>
+          <tr id="tr2"></tr>
+          <tr id="tr3"></tr>
+          <tr id="tr4"></tr>
+          <tr id="tr5"></tr>
+          <tr id="tr6"></tr>
+          <tr id="tr7"></tr>
+          <tr id="tr8"></tr>
+          <tr id="tr9"></tr>
+          <tr id="tr10"></tr>
+          <tr id="tr11"></tr>
+          <tr id="tr12"></tr>
+          <tr id="tr13"></tr>
+          <tr id="tr14"></tr>
+          <tr id="tr15"></tr>
+          <tr id="tr16"></tr>
+          <tr id="tr17"></tr>
+          <tr id="tr18"></tr>
+          <tr id="tr19"></tr>
+          <tr id="tr20"></tr>
+          <tr id="tr21"></tr>
+          <tr id="tr22"></tr>
+          <tr id="tr23"></tr>
+          <tr id="tr24"></tr>
+          <tr id="tr25"></tr>
+          <tr id="tr26"></tr>
+          <tr id="tr27"></tr>
+          <tr id="tr28"></tr>
+          <tr id="tr29"></tr>
+          <tr id="tr30"></tr>
+          <tr id="tr31"></tr>
+          <tr id="tr32"></tr>
+          <tr id="tr33"></tr>
+          <tr id="tr34"></tr>
+          <tr id="tr35"></tr>
+          <tr id="tr36"></tr>
+          <tr id="tr37"></tr>
+          <tr id="tr38"></tr>
+          <tr id="tr39"></tr>
+          <tr id="tr40"></tr>
+          <tr id="tr41"></tr>
+          <tr id="tr42"></tr>
+          <tr id="tr43"></tr>
+          <tr id="tr44"></tr>
+          <tr id="tr45"></tr>
+          <tr id="tr46"></tr>
+          <tr id="tr47"></tr>
+          <tr id="tr48"></tr>
+          <tr id="tr49"></tr>
+          <tr id="tr50"></tr>
+          <tr id="tr51"></tr>
+          <tr id="tr52"></tr>
+          <tr id="tr53"></tr>
+          <tr id="tr54"></tr>
+          <tr id="tr55"></tr>
+          <tr id="tr56"></tr>
+          <tr id="tr57"></tr>
+          <tr id="tr58"></tr>
+          <tr id="tr59"></tr>
+          <tr id="tr60"></tr>
+          <tr id="tr61"></tr>
+          <tr id="tr62"></tr>
+          <tr id="tr63"></tr>
+          <tr id="tr64"></tr>
+          <tr id="tr65"></tr>
+          <tr id="tr66"></tr>
+          <tr id="tr67"></tr>
+          <tr id="tr68"></tr>
+          <tr id="tr69"></tr>
+          <tr id="tr70"></tr>
+          <tr id="tr71"></tr>
+          <tr id="tr72"></tr>
+          <tr id="tr73"></tr>
+          <tr id="tr74"></tr>
+          <tr id="tr75"></tr>
+          <tr id="tr76"></tr>
+          <tr id="tr77"></tr>
+          <tr id="tr78"></tr>
+          <tr id="tr79"></tr>
+          <tr id="tr80"></tr>
+          <tr id="tr81"></tr>
+          <tr id="tr82"></tr>
+          <tr id="tr83"></tr>
+          <tr id="tr84"></tr>
+          <tr id="tr85"></tr>
+          <tr id="tr86"></tr>
+          <tr id="tr87"></tr>
+          <tr id="tr88"></tr>
+          <tr id="tr89"></tr>
+          <tr id="tr90"></tr>
+          <tr id="tr91"></tr>
+          <tr id="tr92"></tr>
+          <tr id="tr93"></tr>
+          <tr id="tr94"></tr>
+          <tr id="tr95"></tr>
+          <tr id="tr96"></tr>
+          <tr id="tr97"></tr>
+          <tr id="tr98"></tr>
+          <tr id="tr99"></tr>
+        </tbody>
+      </table>
+
+      <!-- <nav aria-label="...">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="accionistas-inversores2.html">Previous</a>
+          </li>
+          <li class="page-item active"><a class="page-link" href="accionistas-inversores1.html">1</a></li>
+          <li class="page-item" aria-current="page">
+            <a class="page-link" href="accionistas-inversores2.html">2</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="accionistas-inversores2.html">Next</a>
+          </li>
+        </ul>
+      </nav> -->
+
+
+      <a href="https://www.ferrovial.com/es/accionistas-e-inversores/informacion-financiera/informacion-financiera-trimestral/" class="nav-link px-2 link-dark"><div class="card bg-dark text-white">
+        <img src="Imagenes/inforFinanciera.jpg" class="card-img" alt="ImagenInformacion">
+        <div class="card-img-overlay">
+          <h1 class="card-title display-1">Información Financiera Trimestral</h1>
+          <p class="card-text">Accede aquí para conocer los resultados financieros</p>
+        </div>
+      </div></a>
+      
+
+      <hr class="featurette-divider">
+
+    </div>  
+
+
+    <div class="container">
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center pb-3 mb-3">
+          <li class="nav-item"><a href="index.html" class="nav-link px-2 text-muted">Inicio</a></li>
+          <li class="nav-item"><a href="sobre-nosotros.html" class="nav-link px-2 text-muted">Sobre Nosotros</a></li>
+          <li class="nav-item"><a href="accionistas-inversores1.html" class="nav-link px-2 text-muted">Accionistas e inversores</a></li>
+          <!--<li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Innovación</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Prensa</a></li>-->
+        </ul>
+
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="ms-3"><a class="text-muted" href="https://twitter.com/ferrovial_es"><img class="bi" src="Imagenes/twitter.png" width="50" height="50"></use></img></a></li>
+          <li class="ms-3"><a class="text-muted" href="https://www.linkedin.com/company/ferrovial/"><img class="bi" src="Imagenes/linkedin.png" width="45" height="45"></use></img></a></li>
+          <li class="ms-3"><a class="text-muted" href="https://www.facebook.com/ferrovial"><img class="bi" src="Imagenes/facebook.png" width="50" height="50"></img></a></li>
+        </ul>
+        
+        <p class="text-center text-muted">© Copyright 2022, Ferrovial</p>
+      </footer>
+    </div> 
+    
+        
+  </body>
+
+  <!-- JQUERY -->
+  <script src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+  </script>
+
+  <script src="./libs/js/api.js"></script>
+
+  
+  <!-- <script src="/libs/js/jquery.js"></script> -->
+  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script> <!--vinculamos js dataTables-->
+  <script src="./libs/js/datatables.js"></script>
+  <script src="./libs/js/bootstrap.js"></script> <!--vinculamos js-->
+</html>
