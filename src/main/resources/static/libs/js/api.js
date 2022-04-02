@@ -1,3 +1,4 @@
+//-------------------------------------------- API --------------------------------------------//
 const url1 = "http://api.marketstack.com/v1/eod?access_key=219b66d5ddbba739ae5b7d8dc9598be9&symbols=FER.BMEX";
 const url = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=UFG.FRK&apikey=GADVTGDPHFS18TZV";
 

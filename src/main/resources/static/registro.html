@@ -33,7 +33,7 @@
   <body>
     
     <section class="h-100 h-custom gradient-custom-2">
-      <form class="container py-5 h-100" th:action="@{registroFin}" method="post" th:object="${usuario}">
+      <form class="container py-5 h-100" action=""><!--onsubmit="verificarContra();" -->
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col-12">
             <div class="card card-registration card-registration-2" style="border-radius: 15px;">
@@ -42,28 +42,9 @@
                   <div class="col-lg-6">
                     <div class="p-5">
                       <h3 class="fw-normal mb-5" style="color: #f1c606;">Domicilio</h3>
-    
-                      <div class="row">
-                        <div class="col-md-6 mb-4 pb-2">
-    
-                          <div class="form-outline">
-                            <input th:field="*{calle}" th:value="*{calle}" type="text" id="form3Examplev2" class="form-control form-control-lg" placeholder="C/ Mayor" required />
-                            <label class="form-label" for="form3Examplev2"  >Calle</label>
-                          </div>
-    
-                        </div>
-                        <div class="col-md-6 mb-4 pb-2">
-    
-                          <div class="form-outline">
-                            <input th:field="*{noypiso}" th:value="*{noypiso}" type="text" id="form3Examplev3" class="form-control form-control-lg" placeholder="82 1ºB" required/>
-                            <label class="form-label" for="form3Examplev3">Número y piso</label>
-                          </div>
-    
-                        </div>
-                      </div>
-    
+                      
                       <div class="mb-4 pb-2">
-                          <select class="form-select" aria-label="Default select example">
+                          <select id="provinciaInput" class="form-select" aria-label="Default select example">
                               <option selected>Madrid</option>
                               <option>Málaga</option>
                               <option>Segovia</option>
@@ -74,39 +55,34 @@
                               <option>Huesca</option>
                               <option>Almería</option>
                             </select>
-                            <label class="form-label" for="form3Examplev3">Provincia</label>
+                            <label class="form-label" for="ProvinciaLabel">Provincia</label>
+                      </div>
+
+                      <div class="mb-4 pb-2">
+                        <div class="form-outline">
+                          <input type="text" id="calleInput" class="form-control form-control-lg" placeholder="C/ Mayor 82 1ºB" required />
+                          <label class="form-label" for="calleLabel">Calle, número y piso</label>
+                        </div>
                       </div>
     
                       <div class="mb-4 pb-2">
                         <div class="form-outline">
-                          <input th:field="*{ciudad}" th:value="*{ciudad}" type="text" id="form3Examplev4" class="form-control form-control-lg" required/>
-                          <label class="form-label" for="form3Examplev4">Ciudad</label>
+                          <input type="text" id="cpInput" class="form-control form-control-lg" required/>
+                          <label class="form-label" for="cpLabel">Código postal</label>
                         </div>
                       </div>
-    
-                      <div class="row">
-                        <div class="col-md-6 mb-4 pb-2 mb-md-0 pb-md-0">
-    
-                          <div class="form-outline">
-                            <input th:field="*{cp}" th:value="*{cp}" type="text" id="form3Examplev5" class="form-control form-control-lg" required/>
-                            <label class="form-label" for="form3Examplev5">Código postal</label>
-                          </div>
-    
-                        </div>
-                        <div class="col-md-6">
-    
-                          <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                              <option selected>España</option>
-                              <option value="1">Alemania</option>
-                              <option value="2">Reino Unido</option>
-                              <option value="3">Noruega</option>
-                              <option value="4">Italia</option>
-                              <option value="5">Portugal</option>
-                            </select>
-    
-                        </div>
-                      </div>
-    
+
+                      <h1 class="display-5" id="titulo"></h1>
+
+                      <p class="lead" id="nombre_id"></p>
+                      <p class="lead" id="apellido1_id"></p>
+                      <p class="lead" id="apellido2_id"></p>
+                      <p class="lead" id="email_id"></p>
+                      <p class="lead" id="contra_id"></p>
+                      <p class="lead" id="calle_id"></p>
+                      <p class="lead" id="provincia_id"></p>
+                      <p class="lead" id="cp_id"></p>
+
                     </div>
                   </div>
                   <div class="col-lg-6 bg-indigo text-white">
@@ -115,32 +91,25 @@
     
                       <div class="mb-4 pb-2">
                         <div class="form-outline form-white">
-                          <input th:field="*{email}" th:value="*{email}" type="email" id="form3Examplea2" class="form-control form-control-lg" placeholder="email@ejemplo.com" required/>
-                          <label class="form-label" for="form3Examplea2">Email</label>
-                        </div>
-                      </div>
-    
-                      <div class="mb-4 pb-2">
-                        <div class="form-outline form-white">
-                          <input th:field="*{email2}" th:value="*{email2}" type="email" id="form3Examplea3" class="form-control form-control-lg" placeholder="email@ejemplo.com" required/>
-                          <label class="form-label" for="form3Examplea3">Repetir email</label>
+                          <input type="email" id="emailInput" class="form-control form-control-lg" placeholder="email@ejemplo.com" required/>
+                          <label class="form-label" for="emailLabel">Email</label>
                         </div>
                       </div>
     
                       <div class="row">
-                        <div class="col-md-5 mb-4 pb-2">
+                        <div class="col-md-6 mb-4 pb-2">
     
                           <div class="form-outline form-white">
-                            <input th:field="*{pw}" th:value="*{pw}" type="password" id="form3Examplea4" class="form-control form-control-lg" required/>
-                            <label class="form-label" for="form3Examplea4">Constraseña</label>
+                            <input type="password" id="contraInput" class="form-control form-control-lg" required/>
+                            <label class="form-label" for="contraLabel">Constraseña</label>
                           </div>
     
                         </div>
-                        <div class="col-md-7 mb-4 pb-2">
+                        <div class="col-md-6 mb-4 pb-2">
     
                           <div class="form-outline form-white">
-                            <input th:field="*{pw2}" th:value="*{pw2}" type="password" id="form3Examplea5" class="form-control form-control-lg" required/>
-                            <label class="form-label" for="form3Examplea5">Repetir constraseña</label>
+                            <input type="password" id="contra2Input" class="form-control form-control-lg" required/>
+                            <label class="form-label" for="contra2Label">Repetir constraseña</label>
                           </div>
     
                         </div>
@@ -148,8 +117,8 @@
     
                       <div class="mb-4 pb-2">
                         <div class="form-outline form-white">
-                          <input th:field="*{nombre}" th:value="*{nombre}" type="text" id="form3Examplea6" class="form-control form-control-lg" required/>
-                          <label class="form-label" for="form3Examplea6">Nombre</label>
+                          <input type="text" id="nombreInput" class="form-control form-control-lg" required/>
+                          <label class="form-label" for="nombreLabel">Nombre</label>
                         </div>
                       </div>
     
@@ -157,25 +126,18 @@
                         <div class="col-md-5 mb-4 pb-2">
     
                           <div class="form-outline form-white">
-                            <input th:field="*{apellido1}" th:value="*{apellido1}" type="text" id="form3Examplea7" class="form-control form-control-lg" required/>
-                            <label class="form-label" for="form3Examplea7">Primer apellido</label>
+                            <input type="text" id="apellido1Input" class="form-control form-control-lg" required/>
+                            <label class="form-label" for="apellido1Label">Primer apellido</label>
                           </div>
     
                         </div>
                         <div class="col-md-7 mb-4 pb-2">
     
                           <div class="form-outline form-white">
-                            <input th:field="*{apellido2}" th:value="*{apellido2}" type="text" id="form3Examplea8" class="form-control form-control-lg" required/>
-                            <label class="form-label" for="form3Examplea8">Segundo apellido</label>
+                            <input type="text" id="apellido2Input" class="form-control form-control-lg" required/>
+                            <label class="form-label" for="apellido2Label">Segundo apellido</label>
                           </div>
     
-                        </div>
-                      </div>
-    
-                      <div class="mb-4">
-                        <div class="form-outline form-white">
-                          <input th:field="*{usuario}" th:value="*{usuario}" type="text" id="form3Examplea9" class="form-control form-control-lg" required/>
-                          <label class="form-label" for="form3Examplea9">Nombre de usuario</label>
                         </div>
                       </div>
     
@@ -191,8 +153,9 @@
                         </label>
                       </div>
     
-                      <button type="submit" class="btn btn-light btn-lg" data-mdb-ripple-color="dark">Registrarse</button>
-    
+                      <button id="registrarsebtn" type="submit" class="btn btn-light btn-lg" data-mdb-ripple-color="dark">Registrarse</button>
+                      <button id="resultadosbtn" type="button"  class="btn btn-light btn-lg" data-mdb-ripple-color="dark">Ver resultados</button>
+                      
                     </div>
                   </div>
                 </div>
@@ -226,8 +189,9 @@
     
         
   </body>
-
-    <scripts src="./libs/js/jquery.js"></scripts>
+  
+    <script src="./libs/js/script.js"></script>
+    <script src="./libs/js/jquery.js"></script>
     <script src="./libs/js/bootstrap.js"></script> <!--vinculamos js-->
 
 </html>

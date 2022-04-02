@@ -56,18 +56,27 @@
     <br>
     <br>
 
-
-
     <!----------------------------------------------- RESULTADOS FORMULARIO ----------------------------------------------->
     <h1 class="display-3">Registro exitoso</h1>
 
-    <p class="display-6" th:text="${usuario.nombre}"></p>
-    <p class="display-6" th:text="${usuario.apellido1}"></p>
-    <p class="display-6" th:text="${usuario.apellido2}"></p>
-    <p class="display-6" th:text="${usuario.constrasena}"></p>
-    <p class="display-6" th:text="${usuario.email}"></p>
+    <p class="display-6" id="nombre_id"></p>
+    <p class="display-6" id="apellido1_id"></p>
+    <p class="display-6" id="apellido2_id"></p>
+    <p class="display-6" id="email_id"></p>
+    <p class="display-6" id="contra_id"></p>
+    <p class="display-6" id="calle_id"></p>
+    <p class="display-6" id="provincia_id"></p>
+    <p class="display-6" id="cp_id"></p>
 
-  
+    <hr class="featurette-divider">
+<!-- 
+    <p>Nombre: Javier</p>
+    <p>Primer apellido: González</p>
+    <p>Segundo apellido: Santamaría</p>
+    <p>Constraseña: *******</p>
+    <p>Nombre de usuario: javierjg001</p>
+
+   -->
       <hr class="featurette-divider">
 
 
@@ -93,8 +102,8 @@
     </div>
   </body>
 
-    <scripts src="./libs/js/jquery.js"></scripts>
+    <script src="./libs/js/jquery.js"></script>
     <script src="./libs/js/bootstrap.js"></script> <!--vinculamos js-->
-    <script src="./libs/js/api.js"></script>
+    <!-- <script src="./libs/js/script.js"></script> -->
 
 </html>
