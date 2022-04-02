@@ -2,11 +2,11 @@
 function verificarContra() {
  
     // Ontenemos los valores de los campos de contraseñas 
-    contra1 = document.getElementById("contraInput");
-    contra2 = document.getElementById("contra2Input");
+    let contra1 = document.getElementById("contraInput").value;
+    let contra2 = document.getElementById("contra2Input").value;
  
     // Verificamos si las constraseñas no coinciden 
-    if (contra1.value != contra2.value) {
+    if (contra1 != contra2) {
  
         // Si las constraseñas no coinciden mostramos un mensaje 
         // document.getElementById("error").classList.add("mostrar");
@@ -24,8 +24,7 @@ let resultadosbtn = document.getElementById("resultadosbtn");
 
 //PREVENT DEFAULT
 
-registrarsebtn.addEventListener(
-    "click",
+registrarsebtn.addEventListener("click",
     (postUsuariosData = async () => {
 
         // Obtenemos los datos del formulario y se los asignamos a 
@@ -45,63 +44,80 @@ registrarsebtn.addEventListener(
         //Ahora vamos a hacer un post a nuestra aplicacion de springboot
             //en la direccion /usuarios, en la cual le pasamos el objeto 
         //del usuario en modo json 
-        let request = await fetch("/setUsuarios", { 
-            method: 'POST', //Para publicar los datos del formulario 
-            credentials: "same-origin", 
-            headers: { //Esto es necesario para informarle al programa 
-                                        //que le estamos pasando un JSON al post 
-                "Content-Type": "application/json"
-            },
-                    //Pasamos los datos que hemos recibido en la parte de arriba 
-                    //del programa
-            body: JSON.stringify({
-                provincia: provinciaInput,
-                calle: calleInput,
-                cp: cpInput,
-                email: emailInput,
-                contra: contraInput,
-                nombre: nombreInput,
-                apellido1: apellido1Input,
-                apellido2: apellido2Input
-            }), 
-            dataType: "json"
-        })
 
+        console.log(contraInput);
+        console.log(cpInput);
+        console.log(calleInput);
+        console.log(provinciaInput);
+
+        let stringify = JSON.stringify({
+            provincia: provinciaInput,
+            apellido1: apellido1Input,
+            calle: calleInput,
+            cp: cpInput,
+            email: emailInput,
+            contra: contraInput,
+            nombre: nombreInput,
+            apellido2: apellido2Input
+        });
+
+        console.log(stringify);
+
+
+        if (verificarContra()){
+            let request = await fetch("/setUsuarios", { 
+                method: 'POST', //Para publicar los datos del formulario 
+                credentials: "same-origin", 
+                headers: { //Esto es necesario para informarle al programa 
+                                            //que le estamos pasando un JSON al post 
+                    "Content-Type": "application/json"
+                },
+                        //Pasamos los datos que hemos recibido en la parte de arriba 
+                        //del programa
+                body: stringify, 
+                dataType: "json"
+            })
+
+            console.log(request);
             //Testing de consola 
-        if(request.ok) {
-            console.log("Success!");
-        }
-    })
+            if(request.ok) {
+                console.log("Contraseñas iguales!");
+            }
+        } else {console.log("Las contraseñas no son iguales");}
+    })  
 );
 
-resultadosbtn.addEventListener("click", getUsuariosData = async () => {
-    let get = await fetch("/getUsuarios", {
-      method: "GET",
-      credentials: "same-origin",
-      dataType: "json",
-    });
-    if (get.ok) {
-      var data = await get.json();
-      var provincia = data.provincia;
-      var calle = data.calle;
-      var cp = data.cp;
-      var email = data.email;
-      var nombre = data.nombre;
-      var apellido1 = data.apellido1;
-      var apellido2 = data.apellido2;
-      var contra = data.contra;
+resultadosbtn.addEventListener("click", 
+    getUsuariosData = async () => {
+        let get = await fetch("/getUsuarios", {
+            method: "GET",
+            credentials: "same-origin",
+            dataType: "json",
+        });
 
-      $("#titulo").html(`Registro exitoso`);
+        if (get.ok) {
+            var data = await get.json();
+            console.log(data.contra);
+            var provincia = data.provincia;
+            var nombre = data.nombre;
+            var calle = data.calle;
+            var apellido2 = data.apellido2;
+            var cp = data.cp;
+            var email = data.email;
+            var apellido1 = data.apellido1;
+            var contra = data.contra;
 
-      $("#nombre_id").html(`Nombre: ${nombre}`);
-      $("#apellido1_id").html(`Primer apellido: ${apellido1}`);
-      $("#apellido2_id").html(`Segundo apellido: ${apellido2}`);
-      $("#email_id").html(`Email: ${email}`);
-      $("#contra_id").html(`Contraseña: ${contra}`);
-      $("#calle_id").html(`Calle: ${calle}`);
-      $("#provincia_id").html(`Provincia: ${provincia}`);
-      $("#cp_id").html(`Código postal: ${cp}`);
+            $("#titulo").html(`Registro exitoso`);
 
+            $("#nombre_id").html(`Nombre: ${nombre}`);
+            $("#apellido1_id").html(`Primer apellido: ${apellido1}`);
+            $("#apellido2_id").html(`Segundo apellido: ${apellido2}`);
+            $("#email_id").html(`Email: ${email}`);
+            $("#contra_id").html(`Contraseña: ${contra}`);
+            $("#calle_id").html(`Calle: ${calle}`);
+            $("#provincia_id").html(`Provincia: ${provincia}`);
+            $("#cp_id").html(`Código postal: ${cp}`);
+
+        }
     }
-  }
 );

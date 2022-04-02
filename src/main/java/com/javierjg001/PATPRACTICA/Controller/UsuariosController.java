@@ -19,7 +19,7 @@ public class UsuariosController {
 
     //En caso de que queramos enviar información, dependiendo del método vamos a hacer get y post que se ejecute por función 
     @PostMapping("/setUsuarios")
-    public void postUsuarios(@RequestBody Usuario usuario) {
+    public void postUsuarios(@RequestBody Usuario usuario) { //requestBody transforma el cuerpo de la petición HTTP en un objeto java
         this.usuario = usuario;
     }
 }
