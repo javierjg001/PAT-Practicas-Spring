@@ -65,7 +65,7 @@ registrarsebtn.addEventListener("click",
 
 
         if (verificarContra()){
-            let request = await fetch("/setUsuarios", { 
+            let request = await fetch("/setUsuarios", { //llamo al la "api" setUsuarios
                 method: 'POST', //Para publicar los datos del formulario 
                 credentials: "same-origin", 
                 headers: { //Esto es necesario para informarle al programa 
@@ -89,13 +89,13 @@ registrarsebtn.addEventListener("click",
 
 resultadosbtn.addEventListener("click", 
     getUsuariosData = async () => {
-        let get = await fetch("/getUsuarios", {
+        let get = await fetch("/getUsuarios", { //hago la llamada a /getUsuarios
             method: "GET",
             credentials: "same-origin",
             dataType: "json",
         });
 
-        if (get.ok) {
+        if (get.ok) { //si la llamada ha sido exitosa
             var data = await get.json();
             console.log(data.contra);
             var provincia = data.provincia;

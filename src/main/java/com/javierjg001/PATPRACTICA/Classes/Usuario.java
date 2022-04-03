@@ -1,6 +1,8 @@
 package com.javierjg001.PATPRACTICA.Classes;
 
-public class Usuario {
+import java.io.Serializable;
+
+public class Usuario implements Serializable {
     
     private String nombre;
     private String apellido1;
